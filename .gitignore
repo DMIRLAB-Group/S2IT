@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+
+# Local env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+
+# Checkpoints / outputs
+**/checkpoint-*/
+**/checkpoint-*
+**/checkpoints/
+path_to_sft_checkpoint_*/
+ao_result/
+laptop_result/
+restaurant_result/
+*_result/

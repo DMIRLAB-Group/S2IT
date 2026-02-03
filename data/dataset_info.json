@@ -1,0 +1,51 @@
+{
+  "laptop_train": {
+    "file_name": "acos/training/laptop/train.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "laptop_extraction": {
+    "file_name": "acos/extraction/laptop/test.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "laptop_classification": {
+    "file_name": "../ao_result/save_result.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "restaurant_train": {
+    "file_name": "acos/training/restaurant/train.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "restaurant_extraction": {
+    "file_name": "acos/extraction/restaurant/test.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "restaurant_classification": {
+    "file_name": "../ao_result/save_result.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}
+

@@ -1,0 +1,26 @@
+python src/train.py \
+    --stage sft \
+    --model_name_or_path $model_name_or_path \
+    --do_train 1 \
+    --dataset_dir data\
+    --dataset ${dataset}_train\
+    --cutoff_len 8192 \
+    --template $template \
+    --finetuning_type lora \
+    --output_dir path_to_sft_checkpoint_${dataset} \
+    --overwrite_cache \
+    --seed 42 \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 4 \
+    --lr_scheduler_type cosine \
+    --logging_steps 500 \
+    --save_steps 5000 \
+    --learning_rate 1e-4 \
+    --max_grad_norm 1 \
+    --lora_dropout 0.1 \
+    --lora_rank 32 \
+    --lora_alpha 32 \
+    --lora_target all \
+    --num_train_epochs 6 \
+    --overwrite_output_dir \
+    --plot_loss \

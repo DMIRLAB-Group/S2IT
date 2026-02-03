@@ -1,0 +1,857 @@
+[
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: ca n ' t wait wait for my next visit . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: their sake list was extensive , but we were looking for purple haze , which was n ' t listed but made for us upon request ! \n\nsubgraph: aspect: sake list, which is connected to (extensive, their) within one hop. opinion: extensive, which is connected to (was, looking, list) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: sake list, opinion: extensive | aspect: implicit, opinion: implicit",
+        "output": "aspect: sake list, opinion: extensive, category: drinks style options, sentiment: positive | aspect: implicit, opinion: implicit, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the spicy tuna roll was unusually good and the rock shrimp tempura was awesome , great appetizer to share ! \n\nsubgraph: aspect: spicy tuna roll, which is connected to (good, the) within one hop. opinion: good, which is connected to (was, unusually, appetizer, roll) within one hop. | aspect: rock shrimp tempura, which is connected to (appetizer, the) within one hop. opinion: awesome, which is connected to (appetizer) within one hop. \n\ncandidate: aspect: spicy tuna roll, opinion: good | aspect: rock shrimp tempura, opinion: awesome",
+        "output": "aspect: spicy tuna roll, opinion: good, category: food quality, sentiment: positive | aspect: rock shrimp tempura, opinion: awesome, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: we love th pink pony . \n\nsubgraph: aspect: pink pony, which is connected to (love, th) within one hop. opinion: love, which is connected to (pony, we) within one hop. \n\ncandidate: aspect: pink pony, opinion: love",
+        "output": "aspect: pink pony, opinion: love, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: this place has got to be the best japanese restaurant in the new york area . \n\nsubgraph: aspect: place, which is connected to (got, this) within one hop. opinion: best, which is connected to (restaurant) within one hop. \n\ncandidate: aspect: place, opinion: best",
+        "output": "aspect: place, opinion: best, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i tend to judge a sushi restaurant by its sea urchin , which was heavenly at sushi rose . \n\nsubgraph: aspect: sea urchin, which is connected to (its, judge, rose, by) within one hop. opinion: heavenly, which is connected to (rose) within one hop. \n\ncandidate: aspect: sea urchin, opinion: heavenly",
+        "output": "aspect: sea urchin, opinion: heavenly, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the prix fixe menu is worth every penny and you get more than enough ( both in quantity and quality ) . \n\nsubgraph: aspect: prix fixe menu, which is connected to (worth, the) within one hop. opinion: worth, which is connected to (is, penny, get, menu) within one hop. | aspect: prix fixe menu, which is connected to (worth, the) within one hop. opinion: worth, which is connected to (is, penny, get, menu) within one hop. | aspect: prix fixe menu, which is connected to (worth, the) within one hop. opinion: worth, which is connected to (is, penny, get, menu) within one hop. \n\ncandidate: aspect: prix fixe menu, opinion: worth | aspect: prix fixe menu, opinion: worth | aspect: prix fixe menu, opinion: worth",
+        "output": "aspect: prix fixe menu, opinion: worth, category: food style options, sentiment: positive | aspect: prix fixe menu, opinion: worth, category: food prices, sentiment: positive | aspect: prix fixe menu, opinion: worth, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food here is rather good , but only if you like to wait for it . \n\nsubgraph: aspect: food, which is connected to (good, here, the) within one hop. opinion: good, which is connected to (is, rather, like, food) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: food, opinion: good | aspect: implicit, opinion: implicit",
+        "output": "aspect: food, opinion: good, category: food quality, sentiment: positive | aspect: implicit, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: also , specify if you like your food spicy - its rather bland if you do n ' t . \n\nsubgraph: aspect: food, which is connected to (spicy) within one hop. opinion: bland, which is connected to (rather, like, its) within one hop. \n\ncandidate: aspect: food, opinion: bland",
+        "output": "aspect: food, opinion: bland, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the ambience is pretty and nice for conversation , so a casual lunch here would probably be best . \n\nsubgraph: aspect: ambience, which is connected to (pretty, the) within one hop. opinion: pretty, which is connected to (is, nice, conversation, best, ambience) within one hop. | aspect: ambience, which is connected to (pretty, the) within one hop. opinion: nice, which is connected to (pretty, and) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: best, which is connected to (lunch, would, probably, be, pretty, so) within one hop. \n\ncandidate: aspect: ambience, opinion: pretty | aspect: ambience, opinion: nice | aspect: implicit, opinion: best",
+        "output": "aspect: ambience, opinion: pretty, category: ambience general, sentiment: positive | aspect: ambience, opinion: nice, category: ambience general, sentiment: positive | aspect: implicit, opinion: best, category: restaurant miscellaneous, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: it was horrible . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: horrible, which is connected to (was, it) within one hop. \n\ncandidate: aspect: implicit, opinion: horrible",
+        "output": "aspect: implicit, opinion: horrible, category: restaurant general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: have been dozens of times and never failed to enjoy the experience . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: enjoy, which is connected to (failed, experience, to) within one hop. \n\ncandidate: aspect: implicit, opinion: enjoy",
+        "output": "aspect: implicit, opinion: enjoy, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: make sure you try this place as often as you can . \n\nsubgraph: aspect: place, which is connected to (try, this) within one hop. opinion: often, which is connected to (try, can, as) within one hop. \n\ncandidate: aspect: place, opinion: often",
+        "output": "aspect: place, opinion: often, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i had a huge group for my birthday and we were well taken care of . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: well, which is connected to (taken) within one hop. \n\ncandidate: aspect: implicit, opinion: well",
+        "output": "aspect: implicit, opinion: well, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: get the tuna of gari . \n\nsubgraph: aspect: tuna of gari, which is connected to (get, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: tuna of gari, opinion: implicit",
+        "output": "aspect: tuna of gari, opinion: implicit, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: make sure you have the spicy scallop roll . . . \n\nsubgraph: aspect: spicy scallop roll, which is connected to (have, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: spicy scallop roll, opinion: implicit",
+        "output": "aspect: spicy scallop roll, opinion: implicit, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: raga ' s is a romantic , cozy restaurant . \n\nsubgraph: aspect: raga ' s, which is connected to (restaurant) within one hop. opinion: romantic, which is connected to (restaurant) within one hop. | aspect: raga ' s, which is connected to (restaurant) within one hop. opinion: cozy, which is connected to (restaurant) within one hop. \n\ncandidate: aspect: raga ' s, opinion: romantic | aspect: raga ' s, opinion: cozy",
+        "output": "aspect: raga ' s, opinion: romantic, category: ambience general, sentiment: positive | aspect: raga ' s, opinion: cozy, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i had a great time at jekyll and hyde ! \n\nsubgraph: aspect: jekyll and hyde, which is connected to (had, at) within one hop. opinion: great, which is connected to (time) within one hop. \n\ncandidate: aspect: jekyll and hyde, opinion: great",
+        "output": "aspect: jekyll and hyde, opinion: great, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i am bringing my whole family back next time . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant miscellaneous, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: fine dining restaurant quality . \n\nsubgraph: aspect: dining, which is connected to (restaurant) within one hop. opinion: fine, which is connected to (quality) within one hop. \n\ncandidate: aspect: dining, opinion: fine",
+        "output": "aspect: dining, opinion: fine, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: we will return many times for this oasis in mid - town . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food options rule . \n\nsubgraph: aspect: food, which is connected to (options) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: food, opinion: implicit",
+        "output": "aspect: food, opinion: implicit, category: food style options, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: my husband and i thougt it would be great to go to the jekyll and hyde pub for our anniversary , and to our surprise it was fantastic . \n\nsubgraph: aspect: jekyll and hyde pub, which is connected to (the, go, to) within one hop. opinion: great, which is connected to (it, would, be, thougt, go, fantastic, husband) within one hop. | aspect: jekyll and hyde pub, which is connected to (the, go, to) within one hop. opinion: fantastic, which is connected to (surprise, it, was, great, and) within one hop. \n\ncandidate: aspect: jekyll and hyde pub, opinion: great | aspect: jekyll and hyde pub, opinion: fantastic",
+        "output": "aspect: jekyll and hyde pub, opinion: great, category: restaurant general, sentiment: positive | aspect: jekyll and hyde pub, opinion: fantastic, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: please take my advice , go and try this place . \n\nsubgraph: aspect: place, which is connected to (try, this) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: place, opinion: implicit",
+        "output": "aspect: place, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: they were served warm and had a soft fluffy interior . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: warm, which is connected to (served) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: soft, which is connected to (interior) within one hop. \n\ncandidate: aspect: implicit, opinion: warm | aspect: implicit, opinion: soft",
+        "output": "aspect: implicit, opinion: warm, category: food quality, sentiment: positive | aspect: implicit, opinion: soft, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: but they do . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: fresh restaurant was amazing . . . . . . . . food was delicious and of course fresh . \n\nsubgraph: aspect: restaurant, which is connected to (food, fresh) within one hop. opinion: fresh, which is connected to (restaurant) within one hop. | aspect: restaurant, which is connected to (food, fresh) within one hop. opinion: amazing, which is connected to (food) within one hop. | aspect: food, which is connected to (was, amazing, delicious, restaurant) within one hop. opinion: delicious, which is connected to (food, fresh, was) within one hop. | aspect: food, which is connected to (was, amazing, delicious, restaurant) within one hop. opinion: fresh, which is connected to (restaurant) within one hop. \n\ncandidate: aspect: restaurant, opinion: fresh | aspect: restaurant, opinion: amazing | aspect: food, opinion: delicious | aspect: food, opinion: fresh",
+        "output": "aspect: restaurant, opinion: fresh, category: restaurant general, sentiment: positive | aspect: restaurant, opinion: amazing, category: restaurant general, sentiment: positive | aspect: food, opinion: delicious, category: food quality, sentiment: positive | aspect: food, opinion: fresh, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: hats off to the chef . \n\nsubgraph: aspect: chef, which is connected to (the, off, to) within one hop. opinion: hats off, which is connected to (chef) within one hop. \n\ncandidate: aspect: chef, opinion: hats off",
+        "output": "aspect: chef, opinion: hats off, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: this is some really good , inexpensive sushi . \n\nsubgraph: aspect: sushi, which is connected to (is, some, good, inexpensive, this) within one hop. opinion: good, which is connected to (sushi, really) within one hop. | aspect: sushi, which is connected to (is, some, good, inexpensive, this) within one hop. opinion: inexpensive, which is connected to (sushi) within one hop. \n\ncandidate: aspect: sushi, opinion: good | aspect: sushi, opinion: inexpensive",
+        "output": "aspect: sushi, opinion: good, category: food quality, sentiment: positive | aspect: sushi, opinion: inexpensive, category: food prices, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: this place is always very crowded and popular . \n\nsubgraph: aspect: place, which is connected to (crowded, this) within one hop. opinion: crowded, which is connected to (is, always, very, popular, place) within one hop. | aspect: place, which is connected to (crowded, this) within one hop. opinion: popular, which is connected to (crowded, and) within one hop. \n\ncandidate: aspect: place, opinion: crowded | aspect: place, opinion: popular",
+        "output": "aspect: place, opinion: crowded, category: restaurant miscellaneous, sentiment: positive | aspect: place, opinion: popular, category: restaurant miscellaneous, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: and evaluated on those terms pastis is simply wonderful . \n\nsubgraph: aspect: pastis, which is connected to (terms, evaluated, those) within one hop. opinion: wonderful, which is connected to (evaluated, is, simply, and) within one hop. \n\ncandidate: aspect: pastis, opinion: wonderful",
+        "output": "aspect: pastis, opinion: wonderful, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i ' m still mad that i had to pay for lousy food . \n\nsubgraph: aspect: food, which is connected to (lousy, pay, for) within one hop. opinion: lousy, which is connected to (food) within one hop. \n\ncandidate: aspect: food, opinion: lousy",
+        "output": "aspect: food, opinion: lousy, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the hanger steak was like rubber and the tuna was flavorless not to mention it tasted like it had just been thawed . \n\nsubgraph: aspect: hanger steak, which is connected to (rubber, the) within one hop. opinion: rubber, which is connected to (was, like, flavorless, steak) within one hop. | aspect: tuna, which is connected to (flavorless, the) within one hop. opinion: flavorless, which is connected to (tuna, was, rubber, tasted, and) within one hop. \n\ncandidate: aspect: hanger steak, opinion: rubber | aspect: tuna, opinion: flavorless",
+        "output": "aspect: hanger steak, opinion: rubber, category: food quality, sentiment: negative | aspect: tuna, opinion: flavorless, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: big thumbs up ! \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: thumbs up, which is connected to (big) within one hop. \n\ncandidate: aspect: implicit, opinion: thumbs up",
+        "output": "aspect: implicit, opinion: thumbs up, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the pizza and wine were excellent - the service too - - but what really made this place was the backyard dining area . \n\nsubgraph: aspect: pizza, which is connected to (excellent, wine, the) within one hop. opinion: excellent, which is connected to (were, service, too, area, pizza) within one hop. | aspect: wine, which is connected to (pizza, and) within one hop. opinion: excellent, which is connected to (were, service, too, area, pizza) within one hop. | aspect: service, which is connected to (excellent, the) within one hop. opinion: excellent, which is connected to (were, service, too, area, pizza) within one hop. | aspect: backyard dining area, which is connected to (what, was, the, excellent, but) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: pizza, opinion: excellent | aspect: wine, opinion: excellent | aspect: service, opinion: excellent | aspect: backyard dining area, opinion: implicit",
+        "output": "aspect: pizza, opinion: excellent, category: food quality, sentiment: positive | aspect: wine, opinion: excellent, category: drinks quality, sentiment: positive | aspect: service, opinion: excellent, category: service general, sentiment: positive | aspect: backyard dining area, opinion: implicit, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: it is one the nicest outdoor restaurants i have ever seen in ny - - i am from italy and this place rivals the ones in my country . \n\nsubgraph: aspect: outdoor restaurants, which is connected to (nicest, one, seen, the) within one hop. opinion: nicest, which is connected to (restaurants) within one hop. \n\ncandidate: aspect: outdoor restaurants, opinion: nicest",
+        "output": "aspect: outdoor restaurants, opinion: nicest, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: it is simply amazing . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: amazing, which is connected to (is, simply, it) within one hop. \n\ncandidate: aspect: implicit, opinion: amazing",
+        "output": "aspect: implicit, opinion: amazing, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: beautiful experience . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: beautiful, which is connected to (experience) within one hop. \n\ncandidate: aspect: implicit, opinion: beautiful",
+        "output": "aspect: implicit, opinion: beautiful, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the menu is very limited - i think we counted 4 or 5 entrees . \n\nsubgraph: aspect: menu, which is connected to (limited, the) within one hop. opinion: limited, which is connected to (is, very, think, menu) within one hop. \n\ncandidate: aspect: menu, opinion: limited",
+        "output": "aspect: menu, opinion: limited, category: food style options, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: we will go back every time we are in the city . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the characters really make for an enjoyable experience . \n\nsubgraph: aspect: characters, which is connected to (make, the) within one hop. opinion: enjoyable, which is connected to (experience) within one hop. \n\ncandidate: aspect: characters, opinion: enjoyable",
+        "output": "aspect: characters, opinion: enjoyable, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: however , i think jeckll and hydes t is one of those places that is fun to do once . \n\nsubgraph: aspect: jeckll and hydes, which is connected to (one) within one hop. opinion: fun, which is connected to (is, places, do, that) within one hop. \n\ncandidate: aspect: jeckll and hydes, opinion: fun",
+        "output": "aspect: jeckll and hydes, opinion: fun, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: we had a good time . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: good, which is connected to (time) within one hop. \n\ncandidate: aspect: implicit, opinion: good",
+        "output": "aspect: implicit, opinion: good, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: a little overpriced but worth it once you take a bite . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: overpriced, which is connected to (worth, take, little) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: worth, which is connected to (overpriced, it, but) within one hop. \n\ncandidate: aspect: implicit, opinion: overpriced | aspect: implicit, opinion: worth",
+        "output": "aspect: implicit, opinion: overpriced, category: food prices, sentiment: negative | aspect: implicit, opinion: worth, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i have lived in japan for 7 years and the taste of the food and the feel of the restaurant is like being back in japan . \n\nsubgraph: aspect: food, which is connected to (the, taste, of) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: feel, which is connected to (the, taste, restaurant, and) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: food, opinion: implicit | aspect: feel, opinion: implicit",
+        "output": "aspect: food, opinion: implicit, category: food quality, sentiment: positive | aspect: feel, opinion: implicit, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: check out the secret back room . \n\nsubgraph: aspect: back room, which is connected to (secret, check, the) within one hop. opinion: secret, which is connected to (room) within one hop. \n\ncandidate: aspect: back room, opinion: secret",
+        "output": "aspect: back room, opinion: secret, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: thank you emilio . \n\nsubgraph: aspect: emilio, which is connected to (thank) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: emilio, opinion: implicit",
+        "output": "aspect: emilio, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food was authentic . \n\nsubgraph: aspect: food, which is connected to (authentic, the) within one hop. opinion: authentic, which is connected to (was, food) within one hop. \n\ncandidate: aspect: food, opinion: authentic",
+        "output": "aspect: food, opinion: authentic, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: fantastic ! \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: fantastic, which is connected to () within one hop. \n\ncandidate: aspect: implicit, opinion: fantastic",
+        "output": "aspect: implicit, opinion: fantastic, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: but the staff was so horrible to us . \n\nsubgraph: aspect: staff, which is connected to (horrible, the) within one hop. opinion: horrible, which is connected to (staff, was, so, us, but) within one hop. \n\ncandidate: aspect: staff, opinion: horrible",
+        "output": "aspect: staff, opinion: horrible, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: decor is nice though service can be spotty . \n\nsubgraph: aspect: decor, which is connected to (nice) within one hop. opinion: nice, which is connected to (is, though, spotty, decor) within one hop. | aspect: service, which is connected to (spotty) within one hop. opinion: spotty, which is connected to (can, be, nice, service) within one hop. \n\ncandidate: aspect: decor, opinion: nice | aspect: service, opinion: spotty",
+        "output": "aspect: decor, opinion: nice, category: ambience general, sentiment: positive | aspect: service, opinion: spotty, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: just awsome . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: awsome, which is connected to (just) within one hop. \n\ncandidate: aspect: implicit, opinion: awsome",
+        "output": "aspect: implicit, opinion: awsome, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i had their eggs benedict for brunch , which were the worst in my entire life , i tried removing the hollondaise sauce completely that was how failed it was . \n\nsubgraph: aspect: eggs benedict, which is connected to (had, their, had) within one hop. opinion: worst, which is connected to (were, the, brunch, life, which) within one hop. \n\ncandidate: aspect: eggs benedict, opinion: worst",
+        "output": "aspect: eggs benedict, opinion: worst, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: with the theater 2 blocks away we had a delicious meal in a beautiful room . \n\nsubgraph: aspect: meal, which is connected to (delicious, had, room, a) within one hop. opinion: delicious, which is connected to (meal) within one hop. | aspect: room, which is connected to (a, beautiful, meal, in) within one hop. opinion: beautiful, which is connected to (room) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: meal, opinion: delicious | aspect: room, opinion: beautiful | aspect: implicit, opinion: implicit",
+        "output": "aspect: meal, opinion: delicious, category: food quality, sentiment: positive | aspect: room, opinion: beautiful, category: ambience general, sentiment: positive | aspect: implicit, opinion: implicit, category: location general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the service was attentive . \n\nsubgraph: aspect: service, which is connected to (attentive, the) within one hop. opinion: attentive, which is connected to (was, service) within one hop. \n\ncandidate: aspect: service, opinion: attentive",
+        "output": "aspect: service, opinion: attentive, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: patroon features a nice cigar bar and has great staff . \n\nsubgraph: aspect: cigar bar, which is connected to (nice, features, a) within one hop. opinion: nice, which is connected to (bar) within one hop. | aspect: staff, which is connected to (has, great) within one hop. opinion: great, which is connected to (staff) within one hop. \n\ncandidate: aspect: cigar bar, opinion: nice | aspect: staff, opinion: great",
+        "output": "aspect: cigar bar, opinion: nice, category: ambience general, sentiment: positive | aspect: staff, opinion: great, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: lloovve this place . \n\nsubgraph: aspect: place, which is connected to (lloovve, this) within one hop. opinion: lloovve, which is connected to (place) within one hop. \n\ncandidate: aspect: place, opinion: lloovve",
+        "output": "aspect: place, opinion: lloovve, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the menu is limited but almost all of the dishes are excellent . \n\nsubgraph: aspect: menu, which is connected to (limited, the) within one hop. opinion: limited, which is connected to (is, excellent, menu) within one hop. | aspect: dishes, which is connected to (the, all, of) within one hop. opinion: excellent, which is connected to (all, are, limited, but) within one hop. \n\ncandidate: aspect: menu, opinion: limited | aspect: dishes, opinion: excellent",
+        "output": "aspect: menu, opinion: limited, category: food style options, sentiment: negative | aspect: dishes, opinion: excellent, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: wine list is extensive without being over - priced . \n\nsubgraph: aspect: wine list, which is connected to (extensive) within one hop. opinion: extensive, which is connected to (is, priced, list) within one hop. | aspect: wine list, which is connected to (extensive) within one hop. opinion: without being over - priced, which is connected to (extensive) within one hop. \n\ncandidate: aspect: wine list, opinion: extensive | aspect: wine list, opinion: without being over - priced",
+        "output": "aspect: wine list, opinion: extensive, category: drinks style options, sentiment: positive | aspect: wine list, opinion: without being over - priced, category: drinks prices, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food was very good , a great deal , and the place its self was great . \n\nsubgraph: aspect: food, which is connected to (good, the) within one hop. opinion: good, which is connected to (was, very, deal, food) within one hop. | aspect: food, which is connected to (good, the) within one hop. opinion: a, which is connected to (deal) within one hop. | aspect: place, which is connected to (the, deal, great, and) within one hop. opinion: great, which is connected to (deal) within one hop. \n\ncandidate: aspect: food, opinion: good | aspect: food, opinion: a | aspect: place, opinion: great",
+        "output": "aspect: food, opinion: good, category: food quality, sentiment: positive | aspect: food, opinion: a, category: food prices, sentiment: positive | aspect: place, opinion: great, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the wait staff is very freindly , they make it feel like you ' re eating in a freindly little european town . \n\nsubgraph: aspect: wait staff, which is connected to (freindly, the) within one hop. opinion: freindly, which is connected to (is, very, make, staff) within one hop. \n\ncandidate: aspect: wait staff, opinion: freindly",
+        "output": "aspect: wait staff, opinion: freindly, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the whole set up is truly unprofessional and i wish cafe noir would get some good staff , because despite the current one this is a great place . \n\nsubgraph: aspect: cafe noir, which is connected to (get) within one hop. opinion: great, which is connected to (place) within one hop. | aspect: staff, which is connected to (good, get, some) within one hop. opinion: unprofessional and i wish cafe noir would get some good staff, which is connected to (is, truly, up, place) within one hop. \n\ncandidate: aspect: cafe noir, opinion: great | aspect: staff, opinion: unprofessional and i wish cafe noir would get some good staff",
+        "output": "aspect: cafe noir, opinion: great, category: restaurant general, sentiment: positive | aspect: staff, opinion: unprofessional and i wish cafe noir would get some good staff, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: you should pass on the calamari . \n\nsubgraph: aspect: calamari, which is connected to (the, pass, on) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: calamari, opinion: implicit",
+        "output": "aspect: calamari, opinion: implicit, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: when asked about how a certain dish was prepared in comparison to a similar at other thai restaurants , he replied this is not mcdonald ' s , every place makes things differently \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: everything was wonderful ; food , drinks , staff , mileau . \n\nsubgraph: aspect: food, which is connected to (drinks) within one hop. opinion: wonderful, which is connected to (mileau) within one hop. | aspect: drinks, which is connected to (mileau, food) within one hop. opinion: wonderful, which is connected to (mileau) within one hop. | aspect: staff, which is connected to (mileau) within one hop. opinion: wonderful, which is connected to (mileau) within one hop. | aspect: mileau, which is connected to (was, wonderful, drinks, staff, everything) within one hop. opinion: wonderful, which is connected to (mileau) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: wonderful, which is connected to (mileau) within one hop. \n\ncandidate: aspect: food, opinion: wonderful | aspect: drinks, opinion: wonderful | aspect: staff, opinion: wonderful | aspect: mileau, opinion: wonderful | aspect: implicit, opinion: wonderful",
+        "output": "aspect: food, opinion: wonderful, category: food quality, sentiment: positive | aspect: drinks, opinion: wonderful, category: drinks quality, sentiment: positive | aspect: staff, opinion: wonderful, category: service general, sentiment: positive | aspect: mileau, opinion: wonderful, category: ambience general, sentiment: positive | aspect: implicit, opinion: wonderful, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i would highly recommend this place ! \n\nsubgraph: aspect: place, which is connected to (recommend, this) within one hop. opinion: recommend, which is connected to (would, highly, place, i) within one hop. \n\ncandidate: aspect: place, opinion: recommend",
+        "output": "aspect: place, opinion: recommend, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: fresh ingredients and everything is made to order . \n\nsubgraph: aspect: ingredients, which is connected to (made, everything, fresh) within one hop. opinion: fresh, which is connected to (ingredients) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: ingredients, opinion: fresh | aspect: implicit, opinion: implicit",
+        "output": "aspect: ingredients, opinion: fresh, category: food quality, sentiment: positive | aspect: implicit, opinion: implicit, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: friendly staff that actually lets you enjoy your meal and the company you ' re with . \n\nsubgraph: aspect: staff, which is connected to (lets, company, friendly) within one hop. opinion: friendly, which is connected to (staff) within one hop. \n\ncandidate: aspect: staff, opinion: friendly",
+        "output": "aspect: staff, opinion: friendly, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i will definitely be going back . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: a great choice at any cost and a great deal . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: great, which is connected to (choice) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: great, which is connected to (choice) within one hop. \n\ncandidate: aspect: implicit, opinion: great | aspect: implicit, opinion: great",
+        "output": "aspect: implicit, opinion: great, category: restaurant prices, sentiment: positive | aspect: implicit, opinion: great, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: thalia is a beautiful restaurant with beautiful people serving you , but the food does n ' t quite match up . \n\nsubgraph: aspect: thalia, which is connected to (restaurant) within one hop. opinion: beautiful, which is connected to (restaurant) within one hop. | aspect: people, which is connected to (beautiful, restaurant, serving, with) within one hop. opinion: beautiful, which is connected to (restaurant) within one hop. | aspect: food, which is connected to (match, the) within one hop. opinion: does n ' t quite match up, which is connected to (food, restaurant, but) within one hop. \n\ncandidate: aspect: thalia, opinion: beautiful | aspect: people, opinion: beautiful | aspect: food, opinion: does n ' t quite match up",
+        "output": "aspect: thalia, opinion: beautiful, category: ambience general, sentiment: positive | aspect: people, opinion: beautiful, category: service general, sentiment: positive | aspect: food, opinion: does n ' t quite match up, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i ordered the smoked salmon and roe appetizer and it was off flavor . \n\nsubgraph: aspect: smoked salmon and roe appetizer, which is connected to (ordered, the) within one hop. opinion: off flavor, which is connected to (it, was, ordered, and) within one hop. \n\ncandidate: aspect: smoked salmon and roe appetizer, opinion: off flavor",
+        "output": "aspect: smoked salmon and roe appetizer, opinion: off flavor, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food is good , especially their more basic dishes , and the drinks are delicious . \n\nsubgraph: aspect: food, which is connected to (good, the) within one hop. opinion: good, which is connected to (is, dishes, delicious, food) within one hop. | aspect: basic dishes, which is connected to (more, their, good, especially) within one hop. opinion: good, which is connected to (is, dishes, delicious, food) within one hop. | aspect: drinks, which is connected to (delicious, the) within one hop. opinion: delicious, which is connected to (drinks, are, good, and) within one hop. \n\ncandidate: aspect: food, opinion: good | aspect: basic dishes, opinion: good | aspect: drinks, opinion: delicious",
+        "output": "aspect: food, opinion: good, category: food quality, sentiment: positive | aspect: basic dishes, opinion: good, category: food quality, sentiment: positive | aspect: drinks, opinion: delicious, category: drinks quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the big complaint : no toasting available . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: complaint, which is connected to (big, toasting, available, the) within one hop. \n\ncandidate: aspect: implicit, opinion: complaint",
+        "output": "aspect: implicit, opinion: complaint, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i ' ve been many time and have never been disappointed . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: never been disappointed, which is connected to (have, time, and) within one hop. \n\ncandidate: aspect: implicit, opinion: never been disappointed",
+        "output": "aspect: implicit, opinion: never been disappointed, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the turkey burgers are scary ! \n\nsubgraph: aspect: turkey burgers, which is connected to (scary, the) within one hop. opinion: scary, which is connected to (are, burgers) within one hop. \n\ncandidate: aspect: turkey burgers, opinion: scary",
+        "output": "aspect: turkey burgers, opinion: scary, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: for authentic thai food , look no further than toons . \n\nsubgraph: aspect: thai food, which is connected to (authentic, look, for) within one hop. opinion: authentic, which is connected to (food) within one hop. \n\ncandidate: aspect: thai food, opinion: authentic",
+        "output": "aspect: thai food, opinion: authentic, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: try the pad thai , or sample anything on the appetizer menu . . . they ' re all delicious . \n\nsubgraph: aspect: pad thai, which is connected to (try, the) within one hop. opinion: delicious, which is connected to (re, all, try, they) within one hop. | aspect: pad thai, which is connected to (try, the) within one hop. opinion: delicious, which is connected to (re, all, try, they) within one hop. \n\ncandidate: aspect: pad thai, opinion: delicious | aspect: pad thai, opinion: delicious",
+        "output": "aspect: pad thai, opinion: delicious, category: food quality, sentiment: positive | aspect: pad thai, opinion: delicious, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: service was good and food is wonderful . \n\nsubgraph: aspect: service, which is connected to (good) within one hop. opinion: good, which is connected to (was, wonderful, service) within one hop. | aspect: food, which is connected to (wonderful) within one hop. opinion: wonderful, which is connected to (food, is, good, and) within one hop. \n\ncandidate: aspect: service, opinion: good | aspect: food, opinion: wonderful",
+        "output": "aspect: service, opinion: good, category: service general, sentiment: positive | aspect: food, opinion: wonderful, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: it is definitely a good spot for snacks and chat . \n\nsubgraph: aspect: spot, which is connected to (is, definitely, a, good, snacks, it) within one hop. opinion: good, which is connected to (spot) within one hop. \n\ncandidate: aspect: spot, opinion: good",
+        "output": "aspect: spot, opinion: good, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: do not get the go go hamburgers , no matter what the reviews say . \n\nsubgraph: aspect: go go hamburgers, which is connected to (get, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: go go hamburgers, opinion: implicit",
+        "output": "aspect: go go hamburgers, opinion: implicit, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: steamed fresh so brought hot hot hot to your table . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: fresh, which is connected to (steamed) within one hop. \n\ncandidate: aspect: implicit, opinion: fresh",
+        "output": "aspect: implicit, opinion: fresh, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: small servings for main entree , i had salmon ( wasnt impressed ) girlfriend had chicken , it was good . \n\nsubgraph: aspect: servings for main entree, which is connected to (had, small, had) within one hop. opinion: small, which is connected to (servings) within one hop. | aspect: salmon, which is connected to (had) within one hop. opinion: wasnt impressed, which is connected to (girlfriend) within one hop. | aspect: chicken, which is connected to (had) within one hop. opinion: good, which is connected to (was, had, it) within one hop. \n\ncandidate: aspect: servings for main entree, opinion: small | aspect: salmon, opinion: wasnt impressed | aspect: chicken, opinion: good",
+        "output": "aspect: servings for main entree, opinion: small, category: food general, sentiment: negative | aspect: salmon, opinion: wasnt impressed, category: food quality, sentiment: negative | aspect: chicken, opinion: good, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: cute and decorative . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: cute, which is connected to (decorative) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: decorative, which is connected to (cute, and) within one hop. \n\ncandidate: aspect: implicit, opinion: cute | aspect: implicit, opinion: decorative",
+        "output": "aspect: implicit, opinion: cute, category: ambience general, sentiment: positive | aspect: implicit, opinion: decorative, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: excellent spot for holiday get togethers with co - workers or friends that you have n ' t seen in a while . \n\nsubgraph: aspect: spot, which is connected to (holiday, get, excellent) within one hop. opinion: excellent, which is connected to (spot) within one hop. \n\ncandidate: aspect: spot, opinion: excellent",
+        "output": "aspect: spot, opinion: excellent, category: restaurant miscellaneous, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: what a great place ! \n\nsubgraph: aspect: place, which is connected to (a, great, what) within one hop. opinion: great, which is connected to (place) within one hop. \n\ncandidate: aspect: place, opinion: great",
+        "output": "aspect: place, opinion: great, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: not the typical nyc gimmick theme restaurant . \n\nsubgraph: aspect: restaurant, which is connected to (the, typical, gimmick, theme, not) within one hop. opinion: not the typical, which is connected to (restaurant, restaurant, restaurant) within one hop. \n\ncandidate: aspect: restaurant, opinion: not the typical",
+        "output": "aspect: restaurant, opinion: not the typical, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: service was very prompt but slightly rushed . \n\nsubgraph: aspect: service, which is connected to (prompt) within one hop. opinion: prompt, which is connected to (was, very, rushed, service) within one hop. | aspect: service, which is connected to (prompt) within one hop. opinion: rushed, which is connected to (slightly, prompt, but) within one hop. \n\ncandidate: aspect: service, opinion: prompt | aspect: service, opinion: rushed",
+        "output": "aspect: service, opinion: prompt, category: service general, sentiment: positive | aspect: service, opinion: rushed, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i really liked this place . \n\nsubgraph: aspect: place, which is connected to (liked, this) within one hop. opinion: liked, which is connected to (really, place, i) within one hop. \n\ncandidate: aspect: place, opinion: liked",
+        "output": "aspect: place, opinion: liked, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: everything i had was good , and i ' m a eater . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: good, which is connected to (was, eater, everything) within one hop. \n\ncandidate: aspect: implicit, opinion: good",
+        "output": "aspect: implicit, opinion: good, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i also recommend the rice dishes or the different varieties of congee ( rice porridge ) . \n\nsubgraph: aspect: rice dishes, which is connected to (recommend, varieties, the) within one hop. opinion: recommend, which is connected to (also, dishes, i) within one hop. | aspect: congee ( rice porridge ), which is connected to (varieties, of) within one hop. opinion: recommend, which is connected to (also, dishes, i) within one hop. \n\ncandidate: aspect: rice dishes, opinion: recommend | aspect: congee ( rice porridge ), opinion: recommend",
+        "output": "aspect: rice dishes, opinion: recommend, category: food quality, sentiment: positive | aspect: congee ( rice porridge ), opinion: recommend, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i recently tried suan and i thought that it was great . \n\nsubgraph: aspect: suan, which is connected to (tried) within one hop. opinion: great, which is connected to (it, was, thought, that) within one hop. \n\ncandidate: aspect: suan, opinion: great",
+        "output": "aspect: suan, opinion: great, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: have been several times and it never dissapoints . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: never dissapoints, which is connected to (it, times, and) within one hop. \n\ncandidate: aspect: implicit, opinion: never dissapoints",
+        "output": "aspect: implicit, opinion: never dissapoints, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: this place is a great bargain . \n\nsubgraph: aspect: place, which is connected to (bargain, this) within one hop. opinion: great bargain, which is connected to (is, a, place) within one hop. \n\ncandidate: aspect: place, opinion: great bargain",
+        "output": "aspect: place, opinion: great bargain, category: restaurant prices, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: people are always friendly . \n\nsubgraph: aspect: people, which is connected to (friendly) within one hop. opinion: friendly, which is connected to (are, always, people) within one hop. \n\ncandidate: aspect: people, opinion: friendly",
+        "output": "aspect: people, opinion: friendly, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the best pad thai i ' ve ever had . \n\nsubgraph: aspect: pad thai, which is connected to (best, had, the) within one hop. opinion: best, which is connected to (thai) within one hop. \n\ncandidate: aspect: pad thai, opinion: best",
+        "output": "aspect: pad thai, opinion: best, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: would n ' t recomend it for dinner ! \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: n ' t recomend, which is connected to (it, dinner, would) within one hop. \n\ncandidate: aspect: implicit, opinion: n ' t recomend",
+        "output": "aspect: implicit, opinion: n ' t recomend, category: restaurant general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: ask for usha , the nicest bartender in manhattan . \n\nsubgraph: aspect: usha, which is connected to (ask, for) within one hop. opinion: nicest, which is connected to (bartender) within one hop. \n\ncandidate: aspect: usha, opinion: nicest",
+        "output": "aspect: usha, opinion: nicest, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food ' s as good as ever . \n\nsubgraph: aspect: food, which is connected to (good, the) within one hop. opinion: good, which is connected to (s, as, ever, food) within one hop. \n\ncandidate: aspect: food, opinion: good",
+        "output": "aspect: food, opinion: good, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: best drumsticks over rice and sour spicy soup in town ! \n\nsubgraph: aspect: drumsticks over rice, which is connected to (best, soup) within one hop. opinion: best, which is connected to (drumsticks) within one hop. | aspect: sour spicy soup, which is connected to (rice, town, and) within one hop. opinion: best, which is connected to (drumsticks) within one hop. \n\ncandidate: aspect: drumsticks over rice, opinion: best | aspect: sour spicy soup, opinion: best",
+        "output": "aspect: drumsticks over rice, opinion: best, category: food quality, sentiment: positive | aspect: sour spicy soup, opinion: best, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: for those that go once and do n ' t enjoy it , all i can say is that they just do n ' t get it . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant miscellaneous, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: not worth it . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: not worth, which is connected to (it) within one hop. \n\ncandidate: aspect: implicit, opinion: not worth",
+        "output": "aspect: implicit, opinion: not worth, category: food prices, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: this dish is my favorite and i always get it when i go there and never get tired of it . \n\nsubgraph: aspect: dish, which is connected to (favorite, this) within one hop. opinion: favorite, which is connected to (is, my, get, dish) within one hop. \n\ncandidate: aspect: dish, opinion: favorite",
+        "output": "aspect: dish, opinion: favorite, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: big wong is a great place to eat and fill your stomach . \n\nsubgraph: aspect: big wong, which is connected to (place) within one hop. opinion: great, which is connected to (place) within one hop. \n\ncandidate: aspect: big wong, opinion: great",
+        "output": "aspect: big wong, opinion: great, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food is okay and the prices here are mediocre . \n\nsubgraph: aspect: food, which is connected to (okay, the) within one hop. opinion: okay, which is connected to (is, mediocre, food) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: mediocre, which is connected to (prices, are, okay, and) within one hop. \n\ncandidate: aspect: food, opinion: okay | aspect: implicit, opinion: mediocre",
+        "output": "aspect: food, opinion: okay, category: food quality, sentiment: neutral | aspect: implicit, opinion: mediocre, category: restaurant prices, sentiment: neutral"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: me and my girls will definitely go back . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food is great . \n\nsubgraph: aspect: food, which is connected to (great, the) within one hop. opinion: great, which is connected to (is, food) within one hop. \n\ncandidate: aspect: food, opinion: great",
+        "output": "aspect: food, opinion: great, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: la rosa waltzes in , and i think they are doing it the best . \n\nsubgraph: aspect: la rosa, which is connected to (waltzes) within one hop. opinion: best, which is connected to (doing, the) within one hop. \n\ncandidate: aspect: la rosa, opinion: best",
+        "output": "aspect: la rosa, opinion: best, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: interesting selection , good wines , service fine , fun decor . \n\nsubgraph: aspect: selection, which is connected to (wines, service, decor, interesting) within one hop. opinion: interesting, which is connected to (selection) within one hop. | aspect: wines, which is connected to (selection, good) within one hop. opinion: good, which is connected to (wines) within one hop. | aspect: service, which is connected to (selection) within one hop. opinion: fine, which is connected to (decor) within one hop. | aspect: decor, which is connected to (fun, selection, fine) within one hop. opinion: fun, which is connected to (decor) within one hop. \n\ncandidate: aspect: selection, opinion: interesting | aspect: wines, opinion: good | aspect: service, opinion: fine | aspect: decor, opinion: fun",
+        "output": "aspect: selection, opinion: interesting, category: food style options, sentiment: positive | aspect: wines, opinion: good, category: drinks quality, sentiment: positive | aspect: service, opinion: fine, category: service general, sentiment: positive | aspect: decor, opinion: fun, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food here was mediocre at best . \n\nsubgraph: aspect: food, which is connected to (mediocre, here, the) within one hop. opinion: mediocre, which is connected to (was, best, food) within one hop. \n\ncandidate: aspect: food, opinion: mediocre",
+        "output": "aspect: food, opinion: mediocre, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the cypriot restaurant has a lot going for it . \n\nsubgraph: aspect: cypriot restaurant, which is connected to (has, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: cypriot restaurant, opinion: implicit",
+        "output": "aspect: cypriot restaurant, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: will comeback for sure , wish they have it here in la . . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the space kind of feels like an alice in wonderland setting , without it trying to be that . \n\nsubgraph: aspect: space, which is connected to (feels, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: space, opinion: implicit",
+        "output": "aspect: space, opinion: implicit, category: ambience general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i paid just about $ 60 for a good meal , though : ) \n\nsubgraph: aspect: meal, which is connected to (a, good, paid, for) within one hop. opinion: good, which is connected to (meal) within one hop. | aspect: meal, which is connected to (a, good, paid, for) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: meal, opinion: good | aspect: meal, opinion: implicit",
+        "output": "aspect: meal, opinion: good, category: food quality, sentiment: positive | aspect: meal, opinion: implicit, category: food prices, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: love it . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: love, which is connected to (it) within one hop. \n\ncandidate: aspect: implicit, opinion: love",
+        "output": "aspect: implicit, opinion: love, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the place is a bit hidden away , but once you get there , it ' s all worth it . \n\nsubgraph: aspect: place, which is connected to (hidden, the) within one hop. opinion: hidden away, which is connected to (is, bit, worth, place) within one hop. | aspect: place, which is connected to (hidden, the) within one hop. opinion: worth, which is connected to (get, it, s, all, hidden, it, but) within one hop. \n\ncandidate: aspect: place, opinion: hidden away | aspect: place, opinion: worth",
+        "output": "aspect: place, opinion: hidden away, category: location general, sentiment: positive | aspect: place, opinion: worth, category: location general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i love their chicken pasta cant remember the name but is sooo good \n\nsubgraph: aspect: chicken pasta, which is connected to (love, their) within one hop. opinion: love, which is connected to (pasta, remember, good, i) within one hop. | aspect: chicken pasta, which is connected to (love, their) within one hop. opinion: good, which is connected to (is, sooo, love, but) within one hop. \n\ncandidate: aspect: chicken pasta, opinion: love | aspect: chicken pasta, opinion: good",
+        "output": "aspect: chicken pasta, opinion: love, category: food quality, sentiment: positive | aspect: chicken pasta, opinion: good, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: way below average \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: below average, which is connected to (way) within one hop. \n\ncandidate: aspect: implicit, opinion: below average",
+        "output": "aspect: implicit, opinion: below average, category: restaurant general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i think the pizza is so overrated and was under cooked . \n\nsubgraph: aspect: pizza, which is connected to (overrated, the) within one hop. opinion: overrated, which is connected to (is, so, think, cooked, pizza) within one hop. | aspect: pizza, which is connected to (overrated, the) within one hop. opinion: under cooked, which is connected to (was, overrated, and) within one hop. \n\ncandidate: aspect: pizza, opinion: overrated | aspect: pizza, opinion: under cooked",
+        "output": "aspect: pizza, opinion: overrated, category: food quality, sentiment: negative | aspect: pizza, opinion: under cooked, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i love this place \n\nsubgraph: aspect: place, which is connected to (love, this) within one hop. opinion: love, which is connected to (place, i) within one hop. \n\ncandidate: aspect: place, opinion: love",
+        "output": "aspect: place, opinion: love, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the service was quick and friendly . \n\nsubgraph: aspect: service, which is connected to (quick, the) within one hop. opinion: quick, which is connected to (was, friendly, service) within one hop. | aspect: service, which is connected to (quick, the) within one hop. opinion: friendly, which is connected to (quick, and) within one hop. \n\ncandidate: aspect: service, opinion: quick | aspect: service, opinion: friendly",
+        "output": "aspect: service, opinion: quick, category: service general, sentiment: positive | aspect: service, opinion: friendly, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i thought the restaurant was nice and clean . \n\nsubgraph: aspect: restaurant, which is connected to (nice, the) within one hop. opinion: nice, which is connected to (was, thought, clean, restaurant) within one hop. | aspect: restaurant, which is connected to (nice, the) within one hop. opinion: clean, which is connected to (nice, and) within one hop. \n\ncandidate: aspect: restaurant, opinion: nice | aspect: restaurant, opinion: clean",
+        "output": "aspect: restaurant, opinion: nice, category: restaurant general, sentiment: positive | aspect: restaurant, opinion: clean, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: chicken teriyaki had tomato or pimentos on top ? ? \n\nsubgraph: aspect: chicken teriyaki, which is connected to (had) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: chicken teriyaki, opinion: implicit",
+        "output": "aspect: chicken teriyaki, opinion: implicit, category: food style options, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the waitress was not attentive at all . \n\nsubgraph: aspect: waitress, which is connected to (attentive, the) within one hop. opinion: not attentive, which is connected to (was, all, waitress) within one hop. \n\ncandidate: aspect: waitress, opinion: not attentive",
+        "output": "aspect: waitress, opinion: not attentive, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: just go to yamato and order the red dragon roll . \n\nsubgraph: aspect: yamato, which is connected to (go, to) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: red dragon roll, which is connected to (order, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: yamato, opinion: implicit | aspect: red dragon roll, opinion: implicit",
+        "output": "aspect: yamato, opinion: implicit, category: restaurant general, sentiment: positive | aspect: red dragon roll, opinion: implicit, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: favorite sushi in nyc \n\nsubgraph: aspect: sushi, which is connected to (nyc, favorite) within one hop. opinion: favorite, which is connected to (sushi) within one hop. \n\ncandidate: aspect: sushi, opinion: favorite",
+        "output": "aspect: sushi, opinion: favorite, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the rolls are creative and i have yet to find another sushi place that serves up more inventive yet delicious japanese food . \n\nsubgraph: aspect: rolls, which is connected to (creative, the) within one hop. opinion: creative, which is connected to (are, have, rolls) within one hop. | aspect: japanese food, which is connected to (serves, inventive) within one hop. opinion: inventive, which is connected to (food, delicious, more) within one hop. | aspect: japanese food, which is connected to (serves, inventive) within one hop. opinion: delicious, which is connected to (inventive, yet) within one hop. \n\ncandidate: aspect: rolls, opinion: creative | aspect: japanese food, opinion: inventive | aspect: japanese food, opinion: delicious",
+        "output": "aspect: rolls, opinion: creative, category: food style options, sentiment: positive | aspect: japanese food, opinion: inventive, category: food style options, sentiment: positive | aspect: japanese food, opinion: delicious, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: my quesadilla tasted like it had been made by a three - year old with no sense of proportion or flavor . \n\nsubgraph: aspect: quesadilla, which is connected to (tasted, my) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: quesadilla, which is connected to (tasted, my) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: quesadilla, opinion: implicit | aspect: quesadilla, opinion: implicit",
+        "output": "aspect: quesadilla, opinion: implicit, category: food style options, sentiment: negative | aspect: quesadilla, opinion: implicit, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: save your money and your time and go somewhere else . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the spinach is fresh , definately not frozen . . . \n\nsubgraph: aspect: spinach, which is connected to (fresh, the) within one hop. opinion: fresh, which is connected to (is, frozen, spinach) within one hop. \n\ncandidate: aspect: spinach, opinion: fresh",
+        "output": "aspect: spinach, opinion: fresh, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: decor needs to be upgraded but the food is amazing ! \n\nsubgraph: aspect: decor, which is connected to (needs) within one hop. opinion: upgraded, which is connected to (be, needs, to) within one hop. | aspect: food, which is connected to (amazing, the) within one hop. opinion: amazing, which is connected to (food, is, needs, but) within one hop. \n\ncandidate: aspect: decor, opinion: upgraded | aspect: food, opinion: amazing",
+        "output": "aspect: decor, opinion: upgraded, category: ambience general, sentiment: negative | aspect: food, opinion: amazing, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: my daughter ' s wedding reception at water ' s edge received the highest compliments from our guests . \n\nsubgraph: aspect: water ' s edge, which is connected to (reception, at) within one hop. opinion: highest compliments, which is connected to (received, guests, the) within one hop. \n\ncandidate: aspect: water ' s edge, opinion: highest compliments",
+        "output": "aspect: water ' s edge, opinion: highest compliments, category: restaurant miscellaneous, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the high prices you ' re going to pay is for the view not for the food . \n\nsubgraph: aspect: view, which is connected to (is, for, the, food, prices) within one hop. opinion: high prices, which is connected to (view, going, the) within one hop. | aspect: food, which is connected to (for, the, view, not) within one hop. opinion: high prices, which is connected to (view, going, the) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: high prices, which is connected to (view, going, the) within one hop. \n\ncandidate: aspect: view, opinion: high prices | aspect: food, opinion: high prices | aspect: implicit, opinion: high prices",
+        "output": "aspect: view, opinion: high prices, category: location general, sentiment: neutral | aspect: food, opinion: high prices, category: food quality, sentiment: negative | aspect: implicit, opinion: high prices, category: restaurant prices, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: not what i would expect for the price and prestige of this location . \n\nsubgraph: aspect: location, which is connected to (this, price, of) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: location, which is connected to (this, price, of) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: location, opinion: implicit | aspect: location, opinion: implicit | aspect: implicit, opinion: implicit",
+        "output": "aspect: location, opinion: implicit, category: restaurant prices, sentiment: neutral | aspect: location, opinion: implicit, category: restaurant miscellaneous, sentiment: neutral | aspect: implicit, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food was ok and fair nothing to go crazy . \n\nsubgraph: aspect: food, which is connected to (ok, the) within one hop. opinion: ok, which is connected to (was, nothing, food) within one hop. | aspect: food, which is connected to (ok, the) within one hop. opinion: fair, which is connected to (nothing) within one hop. \n\ncandidate: aspect: food, opinion: ok | aspect: food, opinion: fair",
+        "output": "aspect: food, opinion: ok, category: food quality, sentiment: neutral | aspect: food, opinion: fair, category: food quality, sentiment: neutral"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: impressed . . . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: impressed, which is connected to () within one hop. \n\ncandidate: aspect: implicit, opinion: impressed",
+        "output": "aspect: implicit, opinion: impressed, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: subtle food and service \n\nsubgraph: aspect: food, which is connected to (service, subtle) within one hop. opinion: subtle, which is connected to (food) within one hop. | aspect: service, which is connected to (food, and) within one hop. opinion: subtle, which is connected to (food) within one hop. \n\ncandidate: aspect: food, opinion: subtle | aspect: service, opinion: subtle",
+        "output": "aspect: food, opinion: subtle, category: food quality, sentiment: positive | aspect: service, opinion: subtle, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: food took some time to prepare , all worth waiting for . \n\nsubgraph: aspect: food, which is connected to (took) within one hop. opinion: worth, which is connected to (waiting, prepare) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: food, opinion: worth | aspect: implicit, opinion: implicit",
+        "output": "aspect: food, opinion: worth, category: food quality, sentiment: positive | aspect: implicit, opinion: implicit, category: service general, sentiment: neutral"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: great find in the west village ! \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: great, which is connected to (find) within one hop. \n\ncandidate: aspect: implicit, opinion: great",
+        "output": "aspect: implicit, opinion: great, category: restaurant general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: when the bill came , nothing was comped , so i told the manager very politely that we were willing to pay for the wine , but i did n ' t think i should have to pay for food with a maggot in it . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: amazing food . \n\nsubgraph: aspect: food, which is connected to (amazing) within one hop. opinion: amazing, which is connected to (food) within one hop. \n\ncandidate: aspect: food, opinion: amazing",
+        "output": "aspect: food, opinion: amazing, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: rather than preparing vegetarian dish , the chef presented me with a plate of steamed vegetables ( minus sauce , seasoning , or any form or aesthetic presentation ) . \n\nsubgraph: aspect: vegetarian dish, which is connected to (preparing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: vegetarian dish, which is connected to (preparing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: chef, which is connected to (presented, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: vegetarian dish, opinion: implicit | aspect: vegetarian dish, opinion: implicit | aspect: chef, opinion: implicit",
+        "output": "aspect: vegetarian dish, opinion: implicit, category: food style options, sentiment: negative | aspect: vegetarian dish, opinion: implicit, category: food quality, sentiment: negative | aspect: chef, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the only thing that strikes you is the decor ? ( not very pleasant ) . \n\nsubgraph: aspect: decor, which is connected to (is, the, pleasant, thing) within one hop. opinion: not very pleasant, which is connected to (decor) within one hop. \n\ncandidate: aspect: decor, opinion: not very pleasant",
+        "output": "aspect: decor, opinion: not very pleasant, category: ambience general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the martinis are amazing and very fairly priced . \n\nsubgraph: aspect: martinis, which is connected to (amazing, the) within one hop. opinion: amazing, which is connected to (are, priced, martinis) within one hop. | aspect: martinis, which is connected to (amazing, the) within one hop. opinion: fairly priced, which is connected to (very, amazing, and) within one hop. \n\ncandidate: aspect: martinis, opinion: amazing | aspect: martinis, opinion: fairly priced",
+        "output": "aspect: martinis, opinion: amazing, category: drinks quality, sentiment: positive | aspect: martinis, opinion: fairly priced, category: drinks prices, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i wanted to go there to see if it was worth it and sadly , curiousity got the best of me and i paid dearly for it . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit | aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: restaurant general, sentiment: negative | aspect: implicit, opinion: implicit, category: restaurant prices, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the environment is very upscale and you will see a lot of rich guys with trophy wives or just highly paid escorts . \n\nsubgraph: aspect: environment, which is connected to (upscale, the) within one hop. opinion: upscale, which is connected to (is, very, see, environment) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: upscale, which is connected to (is, very, see, environment) within one hop. \n\ncandidate: aspect: environment, opinion: upscale | aspect: implicit, opinion: upscale",
+        "output": "aspect: environment, opinion: upscale, category: ambience general, sentiment: neutral | aspect: implicit, opinion: upscale, category: restaurant miscellaneous, sentiment: neutral"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: however , our $ 14 drinks were were horrible ! \n\nsubgraph: aspect: drinks, which is connected to (14, horrible, our) within one hop. opinion: horrible, which is connected to (drinks, were, were, however) within one hop. | aspect: drinks, which is connected to (14, horrible, our) within one hop. opinion: horrible, which is connected to (drinks, were, were, however) within one hop. \n\ncandidate: aspect: drinks, opinion: horrible | aspect: drinks, opinion: horrible",
+        "output": "aspect: drinks, opinion: horrible, category: drinks prices, sentiment: negative | aspect: drinks, opinion: horrible, category: drinks quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: once we finally got a table , despite indicating we wanted an alla carte menu we were pushed into a table that was only price fixed ! \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i do n ' t appreciate places or people that try to drive up the bill without the patron ' s knowledge so that was a huge turnoff ( more than the price ) . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit | aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: service general, sentiment: negative | aspect: implicit, opinion: implicit, category: restaurant prices, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: eat at your own risk . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the service was spectacular as the waiter knew everything about the menu and his recommendations were amazing ! \n\nsubgraph: aspect: service, which is connected to (spectacular, the) within one hop. opinion: spectacular, which is connected to (was, knew, amazing, service) within one hop. | aspect: waiter, which is connected to (knew, the) within one hop. opinion: amazing, which is connected to (recommendations, were, spectacular, and) within one hop. \n\ncandidate: aspect: service, opinion: spectacular | aspect: waiter, opinion: amazing",
+        "output": "aspect: service, opinion: spectacular, category: service general, sentiment: positive | aspect: waiter, opinion: amazing, category: service general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the sake ’ s complimented the courses very well and is successfully easing me into the sake world . \n\nsubgraph: aspect: sake ’ s, which is connected to (complimented, the, complimented) within one hop. opinion: well, which is connected to (complimented, very) within one hop. \n\ncandidate: aspect: sake ’ s, opinion: well",
+        "output": "aspect: sake ’ s, opinion: well, category: drinks quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: maybe it was the great company ( i had friends visiting from philly – yes , it was not a date this time ) or the super reasonable price point , but i just can ’ t say enough good things about this brasserie . \n\nsubgraph: aspect: brasserie, which is connected to (this, things, about) within one hop. opinion: good, which is connected to (things, enough) within one hop. | aspect: brasserie, which is connected to (this, things, about) within one hop. opinion: good, which is connected to (things, enough) within one hop. \n\ncandidate: aspect: brasserie, opinion: good | aspect: brasserie, opinion: good",
+        "output": "aspect: brasserie, opinion: good, category: restaurant general, sentiment: positive | aspect: brasserie, opinion: good, category: restaurant prices, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i tried a couple other dishes but was n ' t too impressed . \n\nsubgraph: aspect: dishes, which is connected to (tried, other) within one hop. opinion: n ' t too impressed, which is connected to (was, tried, but) within one hop. \n\ncandidate: aspect: dishes, opinion: n ' t too impressed",
+        "output": "aspect: dishes, opinion: n ' t too impressed, category: food quality, sentiment: neutral"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the family seafood entree was very good . \n\nsubgraph: aspect: family seafood entree, which is connected to (good, the) within one hop. opinion: good, which is connected to (was, very, entree) within one hop. \n\ncandidate: aspect: family seafood entree, opinion: good",
+        "output": "aspect: family seafood entree, opinion: good, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food they serve is not comforting , not appetizing and uncooked . \n\nsubgraph: aspect: food, which is connected to (comforting, serve, the) within one hop. opinion: not comforting, which is connected to (is, appetizing, food) within one hop. | aspect: food, which is connected to (comforting, serve, the) within one hop. opinion: not appetizing, which is connected to (is, food, uncooked) within one hop. | aspect: food, which is connected to (comforting, serve, the) within one hop. opinion: uncooked, which is connected to (appetizing, and) within one hop. \n\ncandidate: aspect: food, opinion: not comforting | aspect: food, opinion: not appetizing | aspect: food, opinion: uncooked",
+        "output": "aspect: food, opinion: not comforting, category: food quality, sentiment: negative | aspect: food, opinion: not appetizing, category: food quality, sentiment: negative | aspect: food, opinion: uncooked, category: food quality, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: supercilious scorn is in . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: supercilious, which is connected to (scorn) within one hop. \n\ncandidate: aspect: implicit, opinion: supercilious",
+        "output": "aspect: implicit, opinion: supercilious, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: single worst restaurant in manhattan \n\nsubgraph: aspect: restaurant, which is connected to (worst, manhattan, single) within one hop. opinion: worst, which is connected to (restaurant) within one hop. \n\ncandidate: aspect: restaurant, opinion: worst",
+        "output": "aspect: restaurant, opinion: worst, category: restaurant general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: it is quite a spectacular scene i ' ll give them that . \n\nsubgraph: aspect: scene, which is connected to (is, quite, a, spectacular, give, it) within one hop. opinion: spectacular, which is connected to (scene) within one hop. \n\ncandidate: aspect: scene, opinion: spectacular",
+        "output": "aspect: scene, opinion: spectacular, category: ambience general, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: how this place survives the competitive west village market in this economy , or any other for that matter , is beyond me . \n\nsubgraph: aspect: place, which is connected to (survives, this) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: place, opinion: implicit",
+        "output": "aspect: place, opinion: implicit, category: restaurant general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: though it ' s been crowded most times i ' ve gone here , bark always delivers on their food . \n\nsubgraph: aspect: bark, which is connected to (delivers) within one hop. opinion: implicit, which is connected to (nothing) within one hop. | aspect: food, which is connected to (their, delivers, on) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: bark, opinion: implicit | aspect: food, opinion: implicit",
+        "output": "aspect: bark, opinion: implicit, category: restaurant miscellaneous, sentiment: neutral | aspect: food, opinion: implicit, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: but nonetheless - - great spot , great food . \n\nsubgraph: aspect: spot, which is connected to (food) within one hop. opinion: great, which is connected to (food) within one hop. | aspect: food, which is connected to (nonetheless, great, spot, great, but) within one hop. opinion: great, which is connected to (food) within one hop. \n\ncandidate: aspect: spot, opinion: great | aspect: food, opinion: great",
+        "output": "aspect: spot, opinion: great, category: restaurant general, sentiment: positive | aspect: food, opinion: great, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food and service were fine , however the maitre - d was incredibly unwelcoming and arrogant . \n\nsubgraph: aspect: food, which is connected to (fine, service, the) within one hop. opinion: fine, which is connected to (were, unwelcoming, food) within one hop. | aspect: service, which is connected to (food, and) within one hop. opinion: fine, which is connected to (were, unwelcoming, food) within one hop. | aspect: maitre - d, which is connected to (unwelcoming, the) within one hop. opinion: unwelcoming, which is connected to (d, was, incredibly, fine, arrogant, however) within one hop. | aspect: maitre - d, which is connected to (unwelcoming, the) within one hop. opinion: arrogant, which is connected to (unwelcoming, and) within one hop. \n\ncandidate: aspect: food, opinion: fine | aspect: service, opinion: fine | aspect: maitre - d, opinion: unwelcoming | aspect: maitre - d, opinion: arrogant",
+        "output": "aspect: food, opinion: fine, category: food quality, sentiment: positive | aspect: service, opinion: fine, category: service general, sentiment: positive | aspect: maitre - d, opinion: unwelcoming, category: service general, sentiment: negative | aspect: maitre - d, opinion: arrogant, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: a word to the wise : you ca n ' t dine here and disturb the maitre - d ' s sense of ` ` table turnover ' ' , as whacked as it is , or else . \n\nsubgraph: aspect: maitre - d, which is connected to (sense, s, the) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: maitre - d, opinion: implicit",
+        "output": "aspect: maitre - d, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: i had the lamb special which was perfect . \n\nsubgraph: aspect: lamb special, which is connected to (had, perfect, the) within one hop. opinion: perfect, which is connected to (was, special, which) within one hop. \n\ncandidate: aspect: lamb special, opinion: perfect",
+        "output": "aspect: lamb special, opinion: perfect, category: food quality, sentiment: positive"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: do n ' t go to this place ! \n\nsubgraph: aspect: place, which is connected to (this, go, to) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: place, opinion: implicit",
+        "output": "aspect: place, opinion: implicit, category: restaurant general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: when the main course finally arrived ( another 45mins ) half of our order was missing . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: when we threatened to leave , we were offered a meager discount even though half the order was missing . \n\nsubgraph: aspect: implicit, which is connected to (nothing) within one hop. opinion: implicit, which is connected to (nothing) within one hop. \n\ncandidate: aspect: implicit, opinion: implicit",
+        "output": "aspect: implicit, opinion: implicit, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the bread was stale , the salad was overpriced and empty . \n\nsubgraph: aspect: bread, which is connected to (stale, the) within one hop. opinion: stale, which is connected to (was, overpriced, bread) within one hop. | aspect: salad, which is connected to (overpriced, the) within one hop. opinion: overpriced, which is connected to (was, stale, empty, salad) within one hop. | aspect: salad, which is connected to (overpriced, the) within one hop. opinion: empty, which is connected to (overpriced, and) within one hop. \n\ncandidate: aspect: bread, opinion: stale | aspect: salad, opinion: overpriced | aspect: salad, opinion: empty",
+        "output": "aspect: bread, opinion: stale, category: food quality, sentiment: negative | aspect: salad, opinion: overpriced, category: food prices, sentiment: negative | aspect: salad, opinion: empty, category: food style options, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: shame on this place for the horrible rude staff and non - existent customer service . \n\nsubgraph: aspect: staff, which is connected to (the, horrible, rude, shame, service, for) within one hop. opinion: horrible, which is connected to (staff) within one hop. | aspect: staff, which is connected to (the, horrible, rude, shame, service, for) within one hop. opinion: rude, which is connected to (staff) within one hop. | aspect: customer service, which is connected to (existent, staff, and) within one hop. opinion: non - existent, which is connected to (service) within one hop. \n\ncandidate: aspect: staff, opinion: horrible | aspect: staff, opinion: rude | aspect: customer service, opinion: non - existent",
+        "output": "aspect: staff, opinion: horrible, category: service general, sentiment: negative | aspect: staff, opinion: rude, category: service general, sentiment: negative | aspect: customer service, opinion: non - existent, category: service general, sentiment: negative"
+    },
+    {
+        "instruction": "task: (classification (aspect, opinion) to (category, sentiment)): Given a sentence, related dependency relations (will be presented in the form of subgraph) and (aspect, opinion) candidates, determine the category of the aspect and the sentiment (positive, neutral, negative) of the opinion and return the quadruple(aspect, opinion, category, sentiment). ",
+        "input": "sentence: the food is good . \n\nsubgraph: aspect: food, which is connected to (good, the) within one hop. opinion: good, which is connected to (is, food) within one hop. \n\ncandidate: aspect: food, opinion: good",
+        "output": "aspect: food, opinion: good, category: food quality, sentiment: positive"
+    }
+]

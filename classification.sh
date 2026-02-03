@@ -1,0 +1,14 @@
+python src/train.py \
+    --stage sft \
+    --model_name_or_path $model_name_or_path \
+    --adapter_name_or_path path_to_sft_checkpoint_${dataset} \
+    --do_predict 1 \
+    --eval_dataset ${dataset}_classification \
+    --template $template \
+    --finetuning_type lora \
+    --lora_target all \
+    --output_dir ${dataset}_result \
+    --per_device_eval_batch_size 4 \
+    --predict_with_generate \
+    --repetition_penalty 2 \
+    --num_beams 8
